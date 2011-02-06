@@ -1,7 +1,8 @@
-package geometry;
+
 
 import java.awt.image.*;
 import java.awt.*;
+import java.util.*; 
 
 /**
  *
@@ -15,15 +16,26 @@ public class BSPTree {
     int screenHeight=300;
     int screenWidth=300;
     double[] currentUnitOfRotation=null;
+    ArrayList<Triangle> tempTriangles=null;
 
     public BSPTree(int d) {
-        
+    	tempTriangles= new ArrayList<Triangle>();
         dimentions=d;
         currentUnitOfRotation=new double[dimentions];
-                for(int i=0;i<dimentions;i++)
+        for(int i=0;i<dimentions;i++)
         {
             currentUnitOfRotation[i]=0.1;
         }
+    }
+    
+    public void addTriangle(Triangle triangle)
+    {
+    	tempTriangles.add(triangle);
+    }
+    
+    public void autoPartition()
+    {
+    	
     }
     
     public void setCurrentUnitOfRotation(double radians)
@@ -106,13 +118,22 @@ public class BSPTree {
     public void rotateRandomly()
     {
         double radians=0.0;
-        for(int i=0;i<dimentions;i++)
+        //choose a first dimention
+        int i=((int)(dimentions*Math.random()));
+        //choose a second dimention 
+        int j=((int)((dimentions-1)*Math.random()));
+        if(i==j)
         {
-            for(int j=i+1;j<dimentions;j++)
-            {
-               rotateAroundOrigin(((Math.PI*2.0)*Math.random()), i,j);
-            }
+        	if(i==(dimentions-1))
+        	{
+        		j=i-1;
+        	}
+        	else
+        	{
+        		j=i+1;
+        	}
         }
+        rotateAroundOrigin(((Math.PI*2.0)*0.01), i,j);
         
     }
     

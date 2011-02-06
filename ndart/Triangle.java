@@ -8,7 +8,7 @@
  * Open. You can then make changes to the template in the Source Editor.
  */
 
-package geometry;
+
 import java.awt.image.*;
 import java.awt.*;
 /**
@@ -116,27 +116,27 @@ public class Triangle {
     {
         
         if(dimentions>2 ){
-        Point normal=null;
-        hyperPlanes=new Point[dimentions-1];
-
-            
-        Point center = new Point(dimentions);
-        center.setAsOrigin();
-        hyperPlanes[0]=center;
-
-        createRandTriangleAtOriginInXYPlane(200.0);
-        for(int i=1;i<(dimentions-1);i++)
-        {
-            normal=new Point(dimentions);
-            normal.setAsOrigin();
-            normal.setCoordinate(i+1, 1.0);
-            hyperPlanes[i]=normal;
-        }
-        chooseHyperplane(1);
-        rotateRandomly();
-        Point randVector=new Point(dimentions);
-        randVector.setRandomCoordinates(20.0);
-        translateByVector(randVector);
+	        Point normal=null;
+	        hyperPlanes=new Point[dimentions-1];
+	
+	            
+	        Point center = new Point(dimentions);
+	        center.setAsOrigin();
+	        hyperPlanes[0]=center;
+	
+	        createRandTriangleAtOriginInXYPlane(400.0);
+	        for(int i=1;i<(dimentions-1);i++)
+	        {
+	            normal=new Point(dimentions);
+	            normal.setAsOrigin();
+	            normal.setCoordinate(i+1, 1.0);
+	            hyperPlanes[i]=normal;
+	        }
+	        chooseHyperplane(1);
+	        rotateRandomly();
+	        Point randVector=new Point(dimentions);
+	        randVector.setRandomCoordinates(20.0);
+	        translateByVector(randVector);
         }
     }
     

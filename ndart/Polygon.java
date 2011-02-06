@@ -8,18 +8,17 @@
  * Open. You can then make changes to the template in the Source Editor.
  */
 
-package geometry;
 
 /**
  *
  * @author justin
  */
 public class Polygon{
-    int dimentions =0;
+
     Point[] orderedListOfPoints;
     /** Creates a new instance of polygon */
     public Polygon(int dimentions, int verticies) {
-        dimentions=dimentions;
+
         orderedListOfPoints=new Point[verticies];
         for(int i=0;i<orderedListOfPoints.length;i++)
         {
