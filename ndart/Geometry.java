@@ -1,6 +1,6 @@
 
 
-package geometry;
+
 import java.awt.image.*;
 import java.awt.*;
 import javax.imageio.*;

@@ -8,7 +8,6 @@
  * Open. You can then make changes to the template in the Source Editor.
  */
 
-package geometry;
 
 import java.util.Random;
 
@@ -112,33 +111,33 @@ public class BSPTreeNode {
     
    public boolean addNode(BSPTreeNode newNode)
    {
-    boolean success=false;
-    if(isRight(newNode.getTriangle()))
-    {
-        if(right==null)
-        {
-            setRight(newNode);
-            success=true;
-        }
-        else
-        {
-            success=right.addNode(newNode);
-        }    
-    }
-    else if(isLeft(newNode.getTriangle()))
-    {
-         if(left==null)
-        {
-            setLeft(newNode);
-            success=true;
-        }
-        else
-        {
-            success=left.addNode(newNode);
-        }    
-    }
-
-    return success;
+	    boolean success=false;
+	    if(isRight(newNode.getTriangle()))
+	    {
+	        if(right==null)
+	        {
+	            setRight(newNode);
+	            success=true;
+	        }
+	        else
+	        {
+	            success=right.addNode(newNode);
+	        }    
+	    }
+	    else if(isLeft(newNode.getTriangle()))
+	    {
+	         if(left==null)
+	        {
+	            setLeft(newNode);
+	            success=true;
+	        }
+	        else
+	        {
+	            success=left.addNode(newNode);
+	        }    
+	    }
+	
+	    return success;
    } 
     
    public void setParent(BSPTreeNode p)

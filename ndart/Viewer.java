@@ -1,4 +1,4 @@
-package geometry;
+
 
 import java.awt.image.*;
 import java.awt.*;
@@ -59,6 +59,7 @@ public class Viewer {
         {
         Point p=t.getPoint(i);
         Point pp=orthogonalProjectPoint(p);
+        //Point pp=perspectiveProjectPoint(p);
         x[i]=(int)(pp).getCoordinate(0)+(screenWidth/2);
         y[i]=(int)(pp).getCoordinate(1)+(screenHeight/2);
         }
